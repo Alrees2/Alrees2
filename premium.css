@@ -1,0 +1,45 @@
+/* Hussein Ali Mustafa — refined interaction layer. No external libraries. */
+:root{--glow-cyan:rgba(121,213,203,.22);--glow-gold:rgba(222,193,140,.18)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(121,213,203,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(121,213,203,.022) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.5),transparent 82%)}
+#reading-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;z-index:100;background:linear-gradient(90deg,#79d5cb,#dec18c,#79d5cb);box-shadow:0 0 18px var(--glow-cyan);pointer-events:none}
+.header{isolation:isolate}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-9px;left:50%;width:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:translateX(-50%);transition:width .3s ease}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+.headline-gradient{background-size:210% 210%;animation:signature-flow 9s ease-in-out infinite}
+@keyframes signature-flow{0%,100%{background-position:0% 50%}50%{background-position:95% 50%}}
+.portrait-frame{transition:box-shadow .5s ease,transform .5s ease}
+.portrait-frame:hover{box-shadow:0 45px 110px rgba(0,0,0,.5),0 0 90px var(--glow-gold);transform:translateY(-5px)}
+.orbit-a{animation:orbit-breathe 9s ease-in-out infinite}.orbit-b{animation:orbit-breathe 11s ease-in-out infinite reverse}
+@keyframes orbit-breathe{0%,100%{opacity:.5;scale:1}50%{opacity:1;scale:1.055}}
+.portrait-frame::before{content:"";position:absolute;top:0;bottom:0;width:46%;left:-100%;z-index:3;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);pointer-events:none;animation:portrait-light 11s ease-in-out infinite}
+@keyframes portrait-light{0%,68%,100%{left:-100%}85%{left:150%}}
+.project-card{position:relative;transform-style:preserve-3d;will-change:auto;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.project-card:hover{box-shadow:0 30px 75px rgba(0,0,0,.25),0 0 38px rgba(121,213,203,.055)}
+.project-card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;border:1px solid rgba(222,193,140,.4);transition:opacity .3s ease}
+.project-card:hover::after{opacity:1}
+.project-art{overflow:hidden}
+.project-art::before{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.project-card:hover .project-art::before{transform:scale(1.05)}
+.button-primary{background-size:200% auto;background-image:linear-gradient(105deg,#e5c98f 0%,#f7e4b4 28%,#c5a365 65%,#e5c98f 100%);transition:background-position .6s ease,transform .2s ease,box-shadow .2s ease}
+.button-primary:hover{background-position:right center}
+#portfolio-search{font:700 15px var(--latin);flex-shrink:0}
+#portfolio-search svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cmd-backdrop{position:fixed;inset:0;z-index:110;background:rgba(1,10,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:grid;place-items:start center;padding:clamp(60px,17vh,180px) 18px 30px;overflow-y:auto}
+.cmd-backdrop[hidden]{display:none}
+.cmd-dialog{width:min(100%,550px);background:#0b1b2a;color:#f2f4f5;border:1px solid rgba(222,193,140,.3);box-shadow:0 30px 100px rgba(0,0,0,.6);border-radius:20px;overflow:hidden;animation:command-enter .2s ease-out}
+@keyframes command-enter{from{opacity:0;transform:translateY(-12px) scale(.98)}to{opacity:1;transform:none}}
+.cmd-top{display:flex;align-items:center;gap:14px;padding:17px 20px;border-bottom:1px solid rgba(170,207,225,.14)}
+.cmd-search{font:600 16px var(--font);background:transparent;border:0;outline:0;color:#fff;min-width:0;width:100%}
+.cmd-search::placeholder{color:#8a9ead}
+.cmd-close{border:1px solid rgba(170,207,225,.2);color:#a9bdc8;background:rgba(255,255,255,.04);border-radius:7px;padding:4px 9px;font:700 11px var(--latin);cursor:pointer}
+.cmd-results{padding:10px;max-height:min(56vh,430px);overflow-y:auto}
+.cmd-option{width:100%;border:0;background:transparent;color:#d3dee7;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:10px;font:600 15px var(--font);text-align:start;cursor:pointer}
+.cmd-option:hover,.cmd-option:focus-visible{background:rgba(121,213,203,.12);outline:1px solid rgba(121,213,203,.24);color:white}
+.cmd-option span:last-child{font:700 12px var(--latin);color:#dec18c}
+.cmd-empty{padding:22px;color:#a9bdc8;text-align:center;font-size:14px}
+.cmd-footer{padding:12px 20px;border-top:1px solid rgba(170,207,225,.14);font:500 11px var(--latin);color:#97a7b4}
+#cursor-aura{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(121,213,203,.045),transparent 66%);transform:translate3d(-500px,-500px,0);will-change:transform}
+@media(max-width:510px){#portfolio-search{display:none}.nav{gap:8px}.portrait-frame::before{animation-duration:15s}}
+@media(max-width:380px){.nav-actions{gap:5px}}
+@media(prefers-reduced-motion:reduce){.headline-gradient,.orbit-a,.orbit-b,.portrait-frame::before{animation:none!important}.project-card,.portrait-frame,.button-primary{transition:none!important}#cursor-aura{display:none}.cmd-dialog{animation:none}}
