@@ -6,6 +6,7 @@
 
 **Software-focused Engineer • Full-Stack & Mobile Development • Iraq**
 
+<a href="https://hussein-engineering-portfolio.vercel.app/"><img src="https://img.shields.io/badge/LIVE%20PORTFOLIO-Visit%20website-0891b2?style=for-the-badge&logo=vercel&logoColor=white" alt="Visit my live engineering portfolio" /></a>
 <a href="https://github.com/Alrees2"><img src="https://img.shields.io/badge/GitHub-Alrees2-0f172a?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 <a href="mailto:afurolul@gmail.com"><img src="https://img.shields.io/badge/Email-Get%20in%20touch-0e7490?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 <a href="https://hussein-ali-mustafa-portfolio.vercel.app"><img src="https://img.shields.io/badge/Live%20Portfolio-Visit%20Website-0e766e?style=for-the-badge&logo=vercel&logoColor=white" alt="Live portfolio" /></a>
