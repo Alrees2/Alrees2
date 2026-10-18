@@ -1,0 +1,7 @@
+# Cloudflare Pages security headers for the static bilingual portfolio
+/*
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-BnA+kSjWAl8Am4f5tnSWVTV3gA5hR4xMONdsujNSTLE='; style-src 'sha256-zDkni/K6u2qPwj2NDePwtp2h5TBd1lLqgzGcXf48E20=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src 'none'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
